@@ -2,7 +2,7 @@ const express = require("express");
 const router = express.Router();
 const mongoose = require("mongoose");
 
-router.post("/displaydata", async (req, res) => {
+router.get("/displaydata", async (req, res) => {
   const fetch_data = mongoose.connection.db.collection("parkings");
   try {
     global.parkingData = await fetch_data.find({}).toArray();
